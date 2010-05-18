@@ -1,4 +1,6 @@
 Therearenews::Application.routes.draw do |map|
+  resources :feeds
+
   devise_for :users
 
   # The priority is based upon order of creation:
@@ -58,5 +60,6 @@ Therearenews::Application.routes.draw do |map|
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   resources :user
+  resources :feed
   root :to => "welcome#index"
 end

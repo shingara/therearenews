@@ -1,0 +1,8 @@
+%h1 Add feed
+
+= simple_form_for @feed do |f|
+  = f.input :url
+  = f.input :login_to_push
+  = f.button :submit
+
+= link_to 'Back', user_path(current_user)

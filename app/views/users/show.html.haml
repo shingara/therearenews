@@ -2,6 +2,20 @@
   %dt Name:
   %dd= @user.login
 
+%h1 All feeds manage
+
+= link_to 'Create feed', new_feed_path
+%table
+  %thead
+    %tr
+      %th Feed
+      %th login_to_push
+  %tbody
+    - @user.feeds.each do |feed|
+      %tr
+        %td= feed.url
+        %td= feed.login_to_push
+
 = link_to 'Edit', edit_user_path(@user)
 \|
 = link_to 'Back', users_path
