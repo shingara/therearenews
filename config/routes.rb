@@ -60,6 +60,6 @@ Therearenews::Application.routes.draw do |map|
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   resources :user
-  resources :feed
+  resources :feeds
   root :to => "welcome#index"
 end
