@@ -3,3 +3,12 @@
 
 en:
   hello: "Hello world"
+  views:
+    welcome:
+      index:
+        hello: Welcome All here
+        list_user: All users
+    layout:
+      login: Login
+      register: Register
+      logout: Logout

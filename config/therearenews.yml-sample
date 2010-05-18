@@ -1,0 +1,12 @@
+development:
+  superfeedr:
+    login:
+    password:
+test:
+  superfeedr:
+    login:
+    password:
+production:
+  superfeedr:
+    login:
+    password:

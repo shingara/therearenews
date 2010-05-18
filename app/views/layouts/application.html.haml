@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title
+      There are news ?
+    = stylesheet_link_tag :all
+    = csrf_meta_tag
+  %body
+    #userbox
+      %ul
+        - if user_signed_in?
+          %li
+            Welcome abord
+            = current_user.login
+          %li= link_to(t('views.layout.logout'), destroy_user_session_url)
+        - else
+          %li=link_to(t('views.layout.login'), new_user_session_url)
+          %li=link_to(t('views.layout.register'), new_user_url)
+    = yield

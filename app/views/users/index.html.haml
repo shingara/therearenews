@@ -1,0 +1,22 @@
+%h1 Listing users
+
+%table
+  %tr
+    %th Github login
+    %th
+    %th
+
+  - @users.each do |user|
+    %tr
+      %td= user.github_login
+      - if can?(:read, user)
+        %td= link_to 'Show', user
+      - if can?(:update, user)
+        %td= link_to 'Edit', edit_user_path(user)
+      - if can?(:destroy, user)
+        %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+- if can?(:create, User)
+  = link_to 'New user', new_user_path

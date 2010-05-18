@@ -8,6 +8,7 @@ gem 'haml'
 gem 'rails3-generators'
 gem 'inherited_resources', '1.1.2'
 gem 'shingara-superfeedr-rb'
+gem 'cancan'
 
 group :test do
   gem "rspec-rails", ">= 2.0.0.beta.8"
