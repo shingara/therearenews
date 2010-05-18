@@ -48,5 +48,13 @@ module Therearenews
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    config.after_initialize do
+      Thread.new do
+        until EM.reactor_running?
+          sleep 1
+        end
+        require 'check_feed'
+      end
+    end
   end
 end
