@@ -16,4 +16,8 @@
         - else
           %li=link_to(t('views.layout.login'), new_user_session_url)
           %li=link_to(t('views.layout.register'), new_user_url)
+    #flash
+      %p.notice= notice
+      %p.alert= alert
+
     = yield

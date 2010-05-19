@@ -12,4 +12,10 @@ class FeedsController < InheritedResources::Base
     end
   end
 
+  def destroy
+    destroy! do |format|
+      format.html { redirect_to user_url(current_user) }
+    end
+  end
+
 end
