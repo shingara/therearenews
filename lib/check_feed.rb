@@ -1,5 +1,5 @@
 require 'superfeedr-rb'
-Superfeedr::Client.connect(AppConfig.superfeedr['login'], AppConfig.superfeedr['password']) do |client|
+Superfeedr::Client.connect(AppConfig.superfeedr['login'], AppConfig.superfeedr['password'], :subscribe_channel => Therearenews::Application::SUBSCRIBE_CHANNEL) do |client|
 
   # Catch all notifications and check if url has notification and push it
   client.register_handler(:pubsub_event) do |evt|

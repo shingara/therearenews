@@ -9,8 +9,6 @@ class Feed
   before_save :subscribe_feed
 
   def subscribe_feed
-    s = UNIXSocket.new(AppConfig.superfeedr['socket'])
-    s.write "subscribe:#{url}"
-    s.close
+    Therearenews::Application::SUBSCRIBE_CHANNEL.push(url)
   end
 end

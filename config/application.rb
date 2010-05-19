@@ -48,6 +48,7 @@ module Therearenews
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    SUBSCRIBE_CHANNEL = EM::Channel.new
     config.after_initialize do
       Thread.new do
         until EM.reactor_running?
