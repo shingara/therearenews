@@ -12,6 +12,7 @@ gem 'shingara-blather', :require => 'blather'
 gem 'shingara-superfeedr-rb', '0.2.2'
 gem 'cancan'
 gem 'thin'
+gem 'bson_ext'
 
 group :test do
   gem "rspec-rails", ">= 2.0.0.beta.8"
