@@ -1,13 +1,21 @@
 require 'superfeedr-rb'
 Superfeedr::Client.connect(AppConfig.superfeedr['login'], AppConfig.superfeedr['password'], :subscribe_channel => Therearenews::Application::SUBSCRIBE_CHANNEL) do |client|
 
+  include ActionView::Helpers::TextHelper
+
   # Catch all notifications and check if url has notification and push it
   client.register_handler(:pubsub_event) do |evt|
     status = Superfeedr::Status.parse(evt)
     entries = Superfeedr::Entry.parse(evt)
     Feed.where(:url => status.feed).each do |feed|
       entries.each do |entry|
-        client.write Blather::Stanza::Message.new(feed.login_to_push, "new entries : #{entry.links.first.href}")
+        message = <<-EOF
+new entries :
+href : #{entry.links.first.href}
+title : #{entry.title}
+extract : #{truncate(entry.content, :length => 80)}
+        EOF
+        client.write Blather::Stanza::Message.new(feed.login_to_push, message)
       end
     end
   end
