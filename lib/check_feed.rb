@@ -14,6 +14,7 @@ new entries :
 href : #{entry.links.first.href}
 title : #{entry.title}
 extract : #{truncate(entry.content, :length => 80)}
+published : #{entry.published}
         EOF
         client.write Blather::Stanza::Message.new(feed.login_to_push, message)
       end
