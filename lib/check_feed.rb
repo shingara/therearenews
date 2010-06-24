@@ -3,6 +3,8 @@ Superfeedr::Client.connect(AppConfig.superfeedr['login'], AppConfig.superfeedr['
 
   include ActionView::Helpers::TextHelper
   include ActionView::Helpers::SanitizeHelper
+  extend ActionView::Helpers::SanitizeHelper::ClassMethods
+
 
   # Catch all notifications and check if url has notification and push it
   client.register_handler(:pubsub_event) do |evt|
