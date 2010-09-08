@@ -13,6 +13,7 @@ gem 'superfeedr-rb', '0.2.0'
 gem 'cancan'
 gem 'thin'
 gem 'bson_ext', '1.0.4'
+gem 'errornot_notifier'
 
 group :test do
   gem "rspec-rails", ">= 2.0.0.beta.8"

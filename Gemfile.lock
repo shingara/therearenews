@@ -51,6 +51,8 @@ GEM
       bcrypt-ruby (~> 2.1.2)
       warden (~> 0.10.7)
     diff-lcs (1.1.2)
+    errornot_notifier (1.1.1)
+      activesupport
     erubis (2.6.6)
       abstract (>= 1.0.0)
     eventmachine (0.12.10)
@@ -142,6 +144,7 @@ DEPENDENCIES
   bson_ext (= 1.0.4)
   cancan
   devise
+  errornot_notifier
   factory_girl
   factory_girl_rails
   haml
