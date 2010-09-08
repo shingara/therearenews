@@ -1,22 +1,23 @@
 source 'http://rubygems.org'
 
-gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'mongoid', :git => 'git://github.com/durran/mongoid.git'
-gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+gem 'rails'
+gem 'mongoid', '2.0.0.beta.17'
+gem 'devise'
 gem 'simple_form'
 gem 'haml'
-gem 'responders', :git => 'http://github.com/plataformatec/responders.git'
+gem 'responders'
 gem 'rails3-generators'
-gem 'inherited_resources', '1.1.2'
+gem 'inherited_resources'
 gem 'shingara-blather', :require => 'blather'
 gem 'superfeedr-rb', '0.2.0'
 gem 'cancan'
 gem 'thin'
-gem 'bson_ext'
+gem 'bson_ext', '1.0.4'
 
 group :test do
   gem "rspec-rails", ">= 2.0.0.beta.8"
-  gem 'factory_girl', :git => 'git://github.com/thoughtbot/factory_girl.git', :branch => 'rails3'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'randexp'
   gem 'webmock'
 end
